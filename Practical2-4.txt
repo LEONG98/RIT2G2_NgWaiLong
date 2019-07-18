@@ -1,0 +1,21 @@
+INCLUDE Irvine32.Inc
+
+.data
+	TF DWORD ?
+	TC DWORD 3200
+
+.code
+main PROC
+
+	MOV EAX,TC
+	MOV EBX, 90
+	MUL EBX
+	MOV EBX,TC
+	ADD EBX,4
+	DIV EBX
+	CALL WriteInt
+
+exit
+
+main endp
+end main
