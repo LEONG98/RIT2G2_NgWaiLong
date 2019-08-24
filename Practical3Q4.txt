@@ -1,0 +1,22 @@
+include Irvine32.inc
+
+.data
+dlist DWORD 2,5000,6000,150000,2500,150
+total DWORD 0
+.code
+main PROC
+	mov esi,OFFSET dlist
+	mov ecx,LENGTHOF dlist
+L1:
+	mov eax,DWORD PTR [esi]
+	add total,eax
+	add esi,4
+	loop L1
+
+	mov eax,total
+	call WriteDec
+
+exit
+
+main endp
+end main
